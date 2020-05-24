@@ -23,7 +23,7 @@ df = pd.read_csv((dir_id + '/results.csv'), usecols=['meters', 'price', 'rooms',
 df = df.dropna()
 df['rooms'].astype(int)
 
-df = df[df['meters'] < SELECTED_METERS][df['price'] < SELECTED_PRICE][df['rooms'] <= SELECTED_ROOMS]
+df = df[df['meters'] <= SELECTED_METERS][df['price'] <= SELECTED_PRICE][df['rooms'] <= SELECTED_ROOMS]
 df = df[df['district'].isin(SELECTED_LOCATIONS)]
 
 df['price_m2'] = round(df['price'] / df['meters']).astype(int)

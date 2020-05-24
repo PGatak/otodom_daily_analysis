@@ -1,6 +1,8 @@
+#-*- coding: utf-8 -*-
 import os
 import json
 from data_preparation import describe, total_quantity_in_the_district, df, DATA_DIR
+from datetime import date
 
 
 #DATA_DIR = os.path.expanduser("~/scraping-data/otodom/aa")
@@ -8,7 +10,7 @@ os.makedirs(DATA_DIR, exist_ok=True)
 districts_quantity_json = os.path.join(DATA_DIR, "districts_quantity.json")
 describe_json = os.path.join(DATA_DIR, "describe.json")
 rooms_value_count_json = os.path.join(DATA_DIR, "rooms_value_count.json")
-groupby_json = os.path.join(DATA_DIR, "groupby.csv")
+groupby_csv= os.path.join(DATA_DIR, "groupby.csv")
 dealers_value_counts_json = os.path.join(DATA_DIR, "dealers_value_counts.csv")
 groupby_number_of_offers_json = os.path.join(DATA_DIR, "groupby_number_of_offers.csv")
 
@@ -30,9 +32,9 @@ for rooms, value in rooms_value.items():
         "rooms": rooms,
         "value": value
     }
-print(rooms_value_count)
 
 #################################################################
+today = str(date.today())
 count = describe.meters[0]
 meters_min = describe.meters[3]
 meters_25 = describe.meters[4]
@@ -50,29 +52,30 @@ price_m2_max = describe.price_m2[7]
 #################################################################
 
 describe = {
-    "count": count,
-    "meters_min": meters_min,
-    "meters_25": meters_25,
-    "meters_50": meters_50,
-    "meters_75": meters_75,
-    "price_mean": round(price_mean),
-    "price_min": price_min,
-    "price_m2_min": price_m2_min,
-    "price_m2_25": price_m2_25,
-    "price_m2_50": price_m2_50,
-    "price_m2_75": price_m2_75,
-    "price_m2_max": price_m2_max
+    "today": today,
+    "count": int(count),
+    "meters_min": int(meters_min),
+    "meters_25": int(meters_25),
+    "meters_50": int(meters_50),
+    "meters_75": int(meters_75),
+    "price_mean": int(price_mean),
+    "price_min": int(price_min),
+    "price_m2_min": int(price_m2_min),
+    "price_m2_25": int(price_m2_25),
+    "price_m2_50": int(price_m2_50),
+    "price_m2_75": int(price_m2_75),
+    "price_m2_max": int(price_m2_max)
 
 }
 
 #################################################################
 
 groupby = round(df['price_m2'].groupby([df['dealer'], df['district'], df['rooms']]).mean().to_frame())
-groupby.to_csv(groupby_json)
+groupby.to_csv(groupby_csv)
 
 #################################################################
 
-dealers_value_counts = df["dealer"].value_counts()[0:20]
+dealers_value_counts = df["dealer"].value_counts()[0:30]
 dealers_value_counts.to_csv(dealers_value_counts_json)
 
 #################################################################
@@ -80,6 +83,9 @@ groupby_number_of_offers = df['district'].groupby([df['dealer'], df['district'],
 groupby_number_of_offers.to_csv(groupby_number_of_offers_json)
 
 #################################################################
+
+#################################################################
+
 with open(districts_quantity_json, "w+") as json_file:
     print("SAVING NEW REVERSE URLS", districts_quantity_json)
     json.dump(districts_quantity, json_file, indent=4)
