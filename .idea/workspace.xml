@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5358841a-eec8-43ad-b16b-e565dda31a60" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/../flask_my_page/templates/otodom.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flask_my_page/templates/otodom1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flask_my_page/templates/otodom2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flask_my_page/templates/otodom3.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../flask_my_page/tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../data/.~lock.old.json#" beforeDir="false" />
@@ -10,10 +13,6 @@
       <change beforePath="$PROJECT_DIR$/../data/new_reverse.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../data/old.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_preparation.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_preparation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_recording.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_recording.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../parsers.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../requirements.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../reverse_data.py" beforeDir="false" />
@@ -545,7 +544,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/scraping-data/otodom/groupby.json" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../flask_my_page" />
   </component>
   <component name="RunManager" selected="Python.data_recording">
     <configuration name="data_preparation" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -659,26 +658,26 @@
       <screen x="0" y="768" width="1920" height="1080" />
     </state>
     <state x="451" y="978" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.768.1920.1080/182.0.1366.768@0.768.1920.1080" timestamp="1589841650063" />
-    <state x="776" y="1078" width="424" height="484" key="FileChooserDialogImpl" timestamp="1590192793298">
+    <state x="776" y="1078" width="424" height="484" key="FileChooserDialogImpl" timestamp="1590268188867">
       <screen x="0" y="768" width="1920" height="1080" />
     </state>
-    <state x="776" y="1078" width="424" height="484" key="FileChooserDialogImpl/0.768.1920.1080/182.0.1366.768@0.768.1920.1080" timestamp="1590192793298" />
-    <state width="1830" height="246" key="GridCell.Tab.0.bottom" timestamp="1590193141463">
+    <state x="776" y="1078" width="424" height="484" key="FileChooserDialogImpl/0.768.1920.1080/182.0.1366.768@0.768.1920.1080" timestamp="1590268188867" />
+    <state width="1830" height="246" key="GridCell.Tab.0.bottom" timestamp="1590284585854">
       <screen x="0" y="768" width="1920" height="1080" />
     </state>
-    <state width="1830" height="246" key="GridCell.Tab.0.bottom/0.768.1920.1080/182.0.1366.768@0.768.1920.1080" timestamp="1590193141463" />
-    <state width="1830" height="246" key="GridCell.Tab.0.center" timestamp="1590193141463">
+    <state width="1830" height="246" key="GridCell.Tab.0.bottom/0.768.1920.1080/182.0.1366.768@0.768.1920.1080" timestamp="1590284585854" />
+    <state width="1830" height="246" key="GridCell.Tab.0.center" timestamp="1590284585854">
       <screen x="0" y="768" width="1920" height="1080" />
     </state>
-    <state width="1830" height="246" key="GridCell.Tab.0.center/0.768.1920.1080/182.0.1366.768@0.768.1920.1080" timestamp="1590193141463" />
-    <state width="1830" height="246" key="GridCell.Tab.0.left" timestamp="1590193141463">
+    <state width="1830" height="246" key="GridCell.Tab.0.center/0.768.1920.1080/182.0.1366.768@0.768.1920.1080" timestamp="1590284585854" />
+    <state width="1830" height="246" key="GridCell.Tab.0.left" timestamp="1590284585854">
       <screen x="0" y="768" width="1920" height="1080" />
     </state>
-    <state width="1830" height="246" key="GridCell.Tab.0.left/0.768.1920.1080/182.0.1366.768@0.768.1920.1080" timestamp="1590193141463" />
-    <state width="1830" height="246" key="GridCell.Tab.0.right" timestamp="1590193141463">
+    <state width="1830" height="246" key="GridCell.Tab.0.left/0.768.1920.1080/182.0.1366.768@0.768.1920.1080" timestamp="1590284585854" />
+    <state width="1830" height="246" key="GridCell.Tab.0.right" timestamp="1590284585854">
       <screen x="0" y="768" width="1920" height="1080" />
     </state>
-    <state width="1830" height="246" key="GridCell.Tab.0.right/0.768.1920.1080/182.0.1366.768@0.768.1920.1080" timestamp="1590193141463" />
+    <state width="1830" height="246" key="GridCell.Tab.0.right/0.768.1920.1080/182.0.1366.768@0.768.1920.1080" timestamp="1590284585854" />
     <state x="607" y="934" width="762" height="773" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1589841574467">
       <screen x="0" y="768" width="1920" height="1080" />
     </state>
