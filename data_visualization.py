@@ -23,7 +23,7 @@ fig.savefig(os.path.join(DIAGRAMS_DATA_DIR, "distributions.png"))
 
 facet = plt.figure(2)
 facet = sns.FacetGrid(df, hue="rooms", aspect=4)
-facet.map(sns.kdeplot, 'price_m2', shade= True)
+facet.map(sns.kdeplot, 'price_m2', shade=True)
 facet.set(xlim=(0, df['price_m2'].max()))
 facet.add_legend()
 plt.grid()
@@ -33,8 +33,8 @@ facet.savefig(os.path.join(DIAGRAMS_DATA_DIR, "rooms_price_m2.png"))
 #################################################################
 
 facet = plt.figure(2)
-facet = sns.FacetGrid(df, hue="rooms",aspect=4)
-facet.map(sns.kdeplot,'price_m2',shade= True)
+facet = sns.FacetGrid(df, hue="rooms", aspect=4)
+facet.map(sns.kdeplot, 'price_m2', shade=True)
 facet.set(xlim=(0, df['price_m2'].max()))
 facet.add_legend()
 plt.title('average price per square meter divided into the number of rooms')
@@ -53,8 +53,8 @@ fig.savefig(os.path.join(DIAGRAMS_DATA_DIR, "sellers_offers.png"))
 #################################################################
 
 facet = plt.figure(5)
-facet = sns.FacetGrid(df, hue="rooms",aspect=4)
-facet.map(sns.kdeplot,'meters',shade= True)
+facet = sns.FacetGrid(df, hue="rooms", aspect=4)
+facet.map(sns.kdeplot, 'meters', shade=True)
 facet.set(xlim=(18, df['meters'].max()))
 plt.grid()
 facet.add_legend()
@@ -65,15 +65,12 @@ facet.savefig(os.path.join(DIAGRAMS_DATA_DIR, "meters_rooms.png"))
 #################################################################
 
 facet = plt.figure(6)
-facet = sns.FacetGrid(df, hue="district",aspect=4)
-facet.map(sns.kdeplot,'price_m2',shade= True)
+facet = sns.FacetGrid(df, hue="district", aspect=4)
+facet.map(sns.kdeplot, 'price_m2', shade=True)
 facet.set(xlim=(0, df['price_m2'].max()))
 facet.add_legend()
 plt.title('average price per square meter divided into districts')
 plt.xlim(5200, 10000)
 facet.savefig(os.path.join(DIAGRAMS_DATA_DIR, "price_m2_district.png"))
 
-#################################################################
-#################################################################
-#################################################################
 #################################################################

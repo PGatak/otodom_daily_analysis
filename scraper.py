@@ -4,9 +4,9 @@ import csv
 import json
 import requests
 
-
-URL = "https://www.otodom.pl/sprzedaz/mieszkanie/lublin/?search%5Bregion_id%5D=3&search%5Bsubregion" \
-      "_id%5D=396&search%5Bcity_id%5D=190"
+URL = "https://www.otodom.pl/sprzedaz/mieszkanie/lublin/" \
+      "?search%5Bregion_id%5D=3&search%5Bsubregion_id%5D=" \
+      "396&search%5Bcity_id%5D=190"
 
 
 class HousingOffers:
@@ -106,7 +106,6 @@ def extract_offers(text):
     return offers
 
 
-
 def main():
     session = requests.Session()
 
@@ -117,8 +116,6 @@ def main():
 
     next_url = URL
 
-    # dir_id = str(uuid.uuid4())
-    # dir_id = time.strftime("%F-%T")
     dir_id = os.path.expanduser("~/scraping-data/otodom/data")
     output_dir = os.path.join(dir_id)
     os.makedirs(output_dir, exist_ok=True)
@@ -163,7 +160,15 @@ def create_result_file(directory):
     output_filename = os.path.join(directory, "results.csv")
     with open(output_filename, 'w+', encoding='utf-8') as csvfile:
         csv_writer = csv.DictWriter(csvfile,
-                                    fieldnames=["id", "meters", "price", "rooms", "dealer", "title", 'location', 'district'],
+                                    fieldnames=["id",
+                                                "meters",
+                                                "price",
+                                                "rooms",
+                                                "dealer",
+                                                "title",
+                                                "location",
+                                                "district"
+                                                ],
                                     delimiter=",")
         csv_writer.writeheader()
         csv_writer.writerows(merged_dict.values())

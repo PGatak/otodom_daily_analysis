@@ -5,14 +5,14 @@ from data_preparation import describe, total_quantity_in_the_district, df, DATA_
 from datetime import date
 
 
-#DATA_DIR = os.path.expanduser("~/scraping-data/otodom/aa")
 os.makedirs(DATA_DIR, exist_ok=True)
 districts_quantity_json = os.path.join(DATA_DIR, "districts_quantity.json")
 describe_json = os.path.join(DATA_DIR, "describe.json")
 rooms_value_count_json = os.path.join(DATA_DIR, "rooms_value_count.json")
 groupby_csv= os.path.join(DATA_DIR, "groupby.csv")
 dealers_value_counts_json = os.path.join(DATA_DIR, "dealers_value_counts.csv")
-groupby_number_of_offers_json = os.path.join(DATA_DIR, "groupby_number_of_offers.csv")
+groupby_number_of_offers_json = os.path.join(DATA_DIR,
+                                             "groupby_number_of_offers.csv")
 
 
 #################################################################
@@ -70,7 +70,9 @@ describe = {
 
 #################################################################
 
-groupby = round(df['price_m2'].groupby([df['dealer'], df['district'], df['rooms']]).mean().to_frame())
+groupby = round(df['price_m2'].groupby([df['dealer'],
+                                        df['district'],
+                                        df['rooms']]).mean().to_frame())
 groupby.to_csv(groupby_csv)
 
 #################################################################
@@ -79,7 +81,9 @@ dealers_value_counts = df["dealer"].value_counts()[0:30]
 dealers_value_counts.to_csv(dealers_value_counts_json)
 
 #################################################################
-groupby_number_of_offers = df['district'].groupby([df['dealer'], df['district'], df['rooms']]).count()
+groupby_number_of_offers = df['district'].groupby([df['dealer'],
+                                                   df['district'],
+                                                   df['rooms']]).count()
 groupby_number_of_offers.to_csv(groupby_number_of_offers_json)
 
 #################################################################

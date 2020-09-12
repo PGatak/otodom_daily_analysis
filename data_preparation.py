@@ -10,16 +10,36 @@ plt.rcParams['xtick.labelsize'] = 12
 plt.rcParams['ytick.labelsize'] = 12
 
 DATA_DIR = os.path.expanduser("~/scraping-data/otodom")
-DIAGRAMS_DATA_DIR = os.path.expanduser("~/projects/flask_my_page/static/scraping-data/otodom/")
+DIAGRAMS_DATA_DIR = os.path.expanduser("~/projects/flask_my_page/static/"
+                                       "scraping-data/otodom/")
 os.makedirs(DIAGRAMS_DATA_DIR, exist_ok=True)
 
 # DATA PREPARATION
-SELECTED_LOCATIONS = ['LSM', 'Czuby', 'Bronowice', 'Felin', 'Wrotków', 'Węglinek', 'Śródmieście', 'Czechów']
+SELECTED_LOCATIONS = ['LSM',
+                      'Czuby',
+                      'Bronowice',
+                      'Felin',
+                      'Wrotków',
+                      'Węglinek',
+                      'Śródmieście',
+                      'Czechów']
+
 SELECTED_METERS = 80
 SELECTED_PRICE = 850000
 SELECTED_ROOMS = 4
 dir_id = os.path.expanduser("~/scraping-data/otodom/data")
-df = pd.read_csv((dir_id + '/results.csv'), usecols=['meters', 'price', 'rooms', 'dealer', 'district'], na_values=['Zapytajocenę', 'EMPTY', '>10'])
+
+df = pd.read_csv((dir_id + '/results.csv'),
+                 usecols=['meters',
+                          'price',
+                          'rooms',
+                          'dealer',
+                          'district'
+                          ],
+                 na_values=['Zapytajocenę',
+                            'EMPTY',
+                            '>10'
+                            ])
 df = df.dropna()
 df['rooms'].astype(int)
 
